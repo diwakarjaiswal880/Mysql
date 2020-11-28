@@ -66,8 +66,12 @@ ALTER TABLE student DROP COLUMN gpa;
 -- Inserting Data in a Table
 INSERT INTO student VALUES(1,'Jack','Biology');
 INSERT INTO student VALUES(2,'Charle','Chemistry');
+INSERT INTO student VALUES(3,'Kate','Computer');
+INSERT INTO student VALUES(4,'Mike','Chemistry');
+INSERT INTO student VALUES(5,'Claire','History');
 
-INSERT INTO student (student_id,name) VALUES(3,'Kate');
+
+INSERT INTO student (student_id,name) VALUES(6,'Kate');
 
 
 -- This is for showing data from Table
@@ -168,5 +172,21 @@ WHERE major='Chemistry' OR name= 'Kate';
 SELECT name, major
 FROM student 
 WHERE major<>'Chemistry'  
+
+
+-- This is use for IN Keyword for find value from table
+SELECT *
+FROM student
+WHERE name IN ('Claire','Kate','Mike');
+
+SELECT *
+FROM student
+WHERE major IN ('Biology','Chemistry');
+
+SELECT *
+FROM student
+WHERE major IN ('Biology','Chemistry') AND student_id > 2;
+
+
 
 
